@@ -19,10 +19,12 @@ public class Biblioteca  {
         this.libro = libro;
     }
 
-// metodos   de agregar eliminar
+// metodos   de agregar eliminar y modificar
     public void agregarLibro(Libros libro) {
         this.libro.add(libro);
     }
+
+
     public boolean eliminarLibroPorId(int id) {
         for (int i = 0; i < this.libro.size(); i++) {
             if (this.libro.get(i).getId() == id) {
@@ -32,6 +34,18 @@ public class Biblioteca  {
         }
         return false; // No se encontró ningún libro con ese ID
     }
+
+    public boolean modificar( Libros libro){
+       // recorremos
+        for(int i=0 ; i<this.libro.size(); i++){
+            if(this.libro.get(i).getId() == libro.getId()){
+                this.libro.set(i, libro);
+                return true;
+            }
+        }
+        return false;
+    }
+
     @Override
     public String toString() {
         return "Biblioteca{" +

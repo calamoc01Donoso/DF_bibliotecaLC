@@ -15,8 +15,11 @@ public class Modelo {
         eliminarLibro(1, biblioteca);
         Libros nuevolibros = new Libros(2,"El capitan 2",25.00);
         crearLibro(nuevolibros);
-        mostrarLibro();
 
+        mostrarLibro();
+        Libros lmodificado = new Libros(2,"El capitanes 2",35.00);
+        modificarLibro(lmodificado);
+        mostrarLibro();
     }
 
     private static void modificarLibro() {
@@ -46,6 +49,17 @@ public class Modelo {
 
 
     }
+
+    private static void modificarLibro(Libros libro){
+    boolean libromodificado = biblioteca.modificar(libro);
+
+        if(libromodificado){
+            System.out.println("se ha modoficado ");
+        }else{
+            System.out.println("no se ha podido modificar");
+        }
+    }
+
 
 
 }

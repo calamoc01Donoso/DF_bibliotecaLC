@@ -11,7 +11,7 @@ public class Libros extends Autor {
     String titulo;
     double precio;
     String descrip;
-     Autor autor = new Autor();
+    Autor autor = new Autor();
     /**
      * Constructor libro
      * @param precio  devulve el valor de precio

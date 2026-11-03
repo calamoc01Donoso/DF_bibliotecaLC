@@ -10,13 +10,14 @@ public class Libros extends Autor {
     int id;
     String titulo;
     double precio;
+    String descrip;
      Autor autor = new Autor();
     /**
      * Constructor libro
      * @param precio  devulve el valor de precio
      * @param titulo devuelve el valor de titulo de libro
      **/
-    public Libros(int id, String titulo, double precio){
+    public Libros(int id, String titulo, String descrip,double precio){
         this.precio = precio;
         this.titulo = titulo;
         this.id = id;

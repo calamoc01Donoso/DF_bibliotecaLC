@@ -8,16 +8,16 @@ public class Modelo {
     public static Biblioteca biblioteca = new Biblioteca();
     public static  void main(String [] args){
 
-        Libros nuevolibro = new Libros(1,"El capitan 1",25.00);
+        Libros nuevolibro = new Libros(1,"El capitan 1","el mundo magico del capitan", 25.00);
         crearLibro(nuevolibro);
         mostrarLibro();
 
         eliminarLibro(1, biblioteca);
-        Libros nuevolibros = new Libros(2,"El capitan 2",25.00);
+        Libros nuevolibros = new Libros(2,"El capitan 2",null,25.00);
         crearLibro(nuevolibros);
 
         mostrarLibro();
-        Libros lmodificado = new Libros(2,"El capitanes 2",35.00);
+        Libros lmodificado = new Libros(2,"El capitanes 2","Los mundos por descubrir", 35.00);
         modificarLibro(lmodificado);
         mostrarLibro();
     }

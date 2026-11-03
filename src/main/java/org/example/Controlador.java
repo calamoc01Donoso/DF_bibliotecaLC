@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 
 // este es el controlador
 
+//Prueba numero 1000
+
 public class Controlador {
 
     @FXML

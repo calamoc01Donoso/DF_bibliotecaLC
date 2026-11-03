@@ -3,6 +3,8 @@ import bilbliotecaLC.*;
 import java.io.IOException;
 import javafx.fxml.FXML;
 
+// este es el controlador
+
 public class Controlador {
 
     @FXML

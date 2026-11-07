@@ -11,7 +11,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <Pane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.PrimaryController">
    <children>
       <VBox alignment="CENTER" prefHeight="355.0" prefWidth="600.0" spacing="20.0">
@@ -34,7 +33,7 @@
                                       <Image url="@../../../../../../../../../../../Pictures/libroAñadir.jpg" />
                                   </image>
                         </ImageView>
-                              <Label text="AÑADIR">
+                              <Label fx:id="añadir" text="AÑADIR">
                                   <font>
                                       <Font name="System Bold" size="18.0" />
                                   </font>
@@ -48,7 +47,7 @@
                                       <Image url="@../../../../../../../../../../../Pictures/libroListar.jpg" />
                                   </image>
                         </ImageView>
-                              <Label text="LISTAR">
+                              <Label fx:id="listar" text="LISTAR">
                                   <font>
                                       <Font name="System Bold" size="18.0" />
                                   </font>

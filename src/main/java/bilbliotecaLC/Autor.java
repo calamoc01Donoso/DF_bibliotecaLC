@@ -16,7 +16,7 @@ public class Autor {
 
     /**
      * Constructor libro
-     * @param nombre  devulve el valor del nombre del autor
+     * @param nombre  devuelve el valor del nombre del autor
      * @param fechapublicacion devuelve el valor de la fecha
      **/
     public Autor( int id, String nombre, Date fechapublicacion){

@@ -15,12 +15,12 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Button alignment="CENTER" layoutX="260.0" layoutY="312.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #E5D605;" text="Modificar" textAlignment="CENTER">
+      <Button alignment="CENTER" layoutX="161.0" layoutY="312.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #E5D605;" text="Modificar" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button alignment="CENTER" layoutX="467.0" layoutY="312.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #F34C4C;" text="Eliminar" textAlignment="CENTER" textFill="#fffbfb">
+      <Button alignment="CENTER" layoutX="317.0" layoutY="312.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #F34C4C;" text="Eliminar" textAlignment="CENTER" textFill="#fffbfb">
          <font>
             <Font size="14.0" />
          </font>
@@ -53,5 +53,10 @@
             </Button>
          </children>
       </Pane>
+      <Button fx:id="regresar" alignment="CENTER" layoutX="468.0" layoutY="312.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #111111;" text="Regresar" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
    </children>
 </Pane>

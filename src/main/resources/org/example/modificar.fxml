@@ -10,21 +10,6 @@
    <children>
       <TextField alignment="CENTER" layoutX="37.0" layoutY="19.0" prefHeight="30.0" prefWidth="459.0" />
       <Button alignment="CENTER" layoutX="518.0" layoutY="19.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" text="🔍" />
-      <Button alignment="CENTER" layoutX="33.0" layoutY="312.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #AEEA00;" text="Añadir" textAlignment="CENTER">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
-      <Button alignment="CENTER" layoutX="260.0" layoutY="312.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #E5D605;" text="Modificar" textAlignment="CENTER">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
-      <Button alignment="CENTER" layoutX="467.0" layoutY="312.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #F34C4C;" text="Eliminar" textAlignment="CENTER" textFill="#fffbfb">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
       <Pane layoutX="-8.0" layoutY="354.0" prefHeight="47.0" prefWidth="608.0" style="-fx-background-color: #000000;">
          <children>
             <Label layoutX="110.0" layoutY="13.0" text="COPYRIGHT: Celia Álamo Calle y Leonarda Ivette Martínez García" textAlignment="CENTER" textFill="WHITE">
@@ -53,5 +38,25 @@
             </Button>
          </children>
       </Pane>
+      <Button alignment="CENTER" layoutX="43.0" layoutY="297.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #AEEA00;" text="Añadir" textAlignment="CENTER">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button alignment="CENTER" layoutX="171.0" layoutY="297.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #E5D605;" text="Modificar" textAlignment="CENTER">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button alignment="CENTER" layoutX="327.0" layoutY="297.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #F34C4C;" text="Eliminar" textAlignment="CENTER" textFill="#fffbfb">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="regresar" alignment="CENTER" layoutX="478.0" layoutY="297.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #111111;" text="Regresar" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
    </children>
 </Pane>

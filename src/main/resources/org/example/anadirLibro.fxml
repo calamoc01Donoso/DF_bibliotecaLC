@@ -12,7 +12,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <Pane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.AnadirLibroController">
    <children>
       <VBox alignment="TOP_CENTER" prefHeight="356.0" prefWidth="600.0" spacing="25.0">
@@ -68,6 +67,14 @@
                      <font>
                         <Font size="14.0" />
                      </font>
+                  </Button>
+                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #111111;" text="Regresar" textFill="WHITE" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
                   </Button>
                </children>
             </HBox>

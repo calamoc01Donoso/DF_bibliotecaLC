@@ -64,6 +64,14 @@
                   <Font size="14.0" />
                </font>
             </Button>
+            <Button fx:id="regresar" alignment="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #111111;" text="Regresar" textFill="WHITE" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Button>
          </children>
       </HBox>
       <Label text="COPYRIGHT: Celia Álamo Calle y Leonarda Ivette Martínez García" />

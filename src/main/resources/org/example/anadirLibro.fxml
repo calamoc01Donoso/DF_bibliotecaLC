@@ -12,7 +12,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <Pane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.AnadirLibroController">
    <children>
       <VBox alignment="TOP_CENTER" prefHeight="356.0" prefWidth="600.0" spacing="25.0">
@@ -39,18 +38,18 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <TextField prefWidth="350.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextField prefWidth="350.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <TextField prefWidth="350.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <TextField prefWidth="350.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <TextField prefHeight="26.0" prefWidth="324.0" GridPane.columnIndex="1" />
+                  <TextField fx:id="titulo" prefWidth="350.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="genero" prefWidth="350.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="ibsn" prefWidth="350.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="fsalida" prefWidth="350.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField fx:id="autor" prefHeight="26.0" prefWidth="324.0" GridPane.columnIndex="1" />
                   <Label text="Autor" />
                   <Label text="Título" GridPane.rowIndex="1" />
                   <Label text="Género" GridPane.rowIndex="2" />
                   <Label text="ISBN" GridPane.rowIndex="3" />
                   <Label text="Fecha Salida" GridPane.rowIndex="4" />
                   <Label text="Portada" GridPane.rowIndex="5" />
-                  <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Adjuntar imagen" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Button fx:id="imagen" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Adjuntar imagen" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                </children>
                <VBox.margin>
                   <Insets left="15.0" />
@@ -68,6 +67,14 @@
                      <font>
                         <Font size="14.0" />
                      </font>
+                  </Button>
+                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #111111;" text="Regresar" textFill="WHITE" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
                   </Button>
                </children>
             </HBox>

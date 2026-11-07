@@ -14,21 +14,6 @@
    <children>
       <TextField alignment="CENTER" layoutX="37.0" layoutY="19.0" prefHeight="30.0" prefWidth="459.0" />
       <Button alignment="CENTER" layoutX="518.0" layoutY="19.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" text="🔍" />
-      <Button alignment="CENTER" layoutX="33.0" layoutY="312.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #AEEA00;" text="Añadir" textAlignment="CENTER">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
-      <Button alignment="CENTER" layoutX="260.0" layoutY="312.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #E5D605;" text="Modificar" textAlignment="CENTER">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
-      <Button alignment="CENTER" layoutX="467.0" layoutY="312.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #F34C4C;" text="Eliminar" textAlignment="CENTER" textFill="#fffbfb">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
       <Pane layoutX="-8.0" layoutY="354.0" prefHeight="46.0" prefWidth="610.0" style="-fx-background-color: #000000;">
          <children>
             <Label layoutX="110.0" layoutY="13.0" text="COPYRIGHT: Celia Álamo Calle y Leonarda Ivette Martínez García" textAlignment="CENTER" textFill="WHITE">
@@ -38,7 +23,7 @@
             </Label>
          </children>
       </Pane>
-      <TableView layoutX="37.0" layoutY="74.0" prefHeight="200.0" prefWidth="352.0">
+      <TableView fx:id="listatab" layoutX="37.0" layoutY="74.0" prefHeight="200.0" prefWidth="352.0">
         <columns>
           <TableColumn prefWidth="75.0" text="ID" />
           <TableColumn prefWidth="75.0" text="Titulo" />
@@ -51,5 +36,25 @@
             <Image url="@../../../Imágenes/Saved%20Pictures/hokage_naruto_uzumaki_hd_naruto-1920x1080.jpg" />
          </image>
       </ImageView>
+      <Button fx:id="añadir" alignment="CENTER" layoutX="43.0" layoutY="303.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #AEEA00;" text="Añadir" textAlignment="CENTER">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="modificar" alignment="CENTER" layoutX="179.0" layoutY="303.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #E5D605;" text="Modificar" textAlignment="CENTER">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="eliminar" alignment="CENTER" layoutX="331.0" layoutY="303.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #F34C4C;" text="Eliminar" textAlignment="CENTER" textFill="#fffbfb">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="regresar" alignment="CENTER" layoutX="478.0" layoutY="303.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #111111;" text="Regresar" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
    </children>
 </Pane>

@@ -5,25 +5,39 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.control.TextArea?>
 
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" xmlns:fx="org.example.Controlador">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.BibliotecaControlador">
    <children>
       <TextField fx:id="inpubuscar" layoutX="34.0" layoutY="25.0" prefHeight="25.0" prefWidth="459.0" />
-      <Button fx:id="btbuscar" layoutX="503.0" layoutY="25.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="76.0" text="Buscar" />
-      <ImageView id="imagen" fitHeight="229.0" fitWidth="200.0" layoutX="379.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true" />
-      <Label layoutX="42.0" layoutY="78.0" prefHeight="17.0" prefWidth="37.0" text="Título" />
-      <Label layoutX="42.0" layoutY="114.0" prefHeight="17.0" prefWidth="76.0" text="Autor" />
-      <Label layoutX="42.0" layoutY="152.0" prefHeight="17.0" prefWidth="76.0" text="INSN" />
-      <Label layoutX="42.0" layoutY="183.0" prefHeight="17.0" prefWidth="76.0" text="Descripción" />
-      <Label layoutX="34.0" layoutY="286.0" prefHeight="17.0" prefWidth="124.0" text="Fecha  de publicación:" />
-      <Button fx:id="btanadir" layoutX="42.0" layoutY="339.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="76.0" style="-fx-background-color: green;" text="Añadir" textFill="WHITE" />
-      <Button fx:id="btmodifcar" layoutX="262.0" layoutY="339.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="76.0" style="-fx-background-color: yellow;" text="Modificar" />
-      <Button fx:id="bteliminar" layoutX="493.0" layoutY="339.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="76.0" style="-fx-background-color: red;" text="Eliminar" textFill="WHITE" />
-      <Label fx:id="descrip" layoutX="42.0" layoutY="208.0" prefHeight="17.0" prefWidth="287.0" text="dsd" />
-      <Label fx:id="title" layoutX="96.0" layoutY="78.0" prefHeight="17.0" prefWidth="287.0" text="dsd" />
-      <Label fx:id="autor" layoutX="86.0" layoutY="114.0" prefHeight="17.0" prefWidth="287.0" text="dsd" />
-      <Label fx:id="ibsn" layoutX="96.0" layoutY="152.0" prefHeight="17.0" prefWidth="287.0" text="dsd" />
-      <Label fx:id="fecha" layoutX="166.0" layoutY="286.0" prefHeight="17.0" prefWidth="287.0" text="dsd" />
+      <Button fx:id="btbuscar" layoutX="503.0" layoutY="25.0" mnemonicParsing="false" onAction="#buscarLibroInfo" prefHeight="25.0" prefWidth="76.0" text="Buscar" />
+      <ImageView fx:id="portadaInfo" fitHeight="260.0" fitWidth="190.0" layoutX="390.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true" />
+
+       <!-- Título -->
+       <Label layoutX="42.0" layoutY="78.0" prefHeight="17.0" prefWidth="50.0" text="Título" />
+       <Label fx:id="title" layoutX="110.0" layoutY="78.0" prefHeight="17.0" prefWidth="250.0" text="dsd" />
+
+       <!-- Autor -->
+       <Label layoutX="42.0" layoutY="114.0" prefHeight="17.0" prefWidth="50.0" text="Autor" />
+       <Label fx:id="autorInfo" layoutX="110.0" layoutY="114.0" prefHeight="17.0" prefWidth="250.0" text="dsd" />
+
+       <!-- ISBN -->
+       <Label layoutX="42.0" layoutY="150.0" prefHeight="17.0" prefWidth="50.0" text="ISBN" />
+       <Label fx:id="isbnInfo" layoutX="110.0" layoutY="150.0" prefHeight="17.0" prefWidth="250.0" text="dsd" />
+
+       <!-- Fecha de publicación -->
+       <Label layoutX="42.0" layoutY="186.0" prefHeight="17.0" prefWidth="135.0" text="Fecha de publicación:" />
+       <Label fx:id="fechaInfo" layoutX="185.0" layoutY="186.0" prefHeight="17.0" prefWidth="175.0" text="dsd" />
+
+       <!-- Descripción -->
+       <Label layoutX="42.0" layoutY="220.0" prefHeight="17.0" prefWidth="100.0" text="Descripción" />
+       <TextArea fx:id="descripInfo" editable="false" focusTraversable="false" layoutX="42.0" layoutY="242.0" prefHeight="120.0" prefWidth="320.0" wrapText="true" />
+
+       <!-- Botones -->
+       <Button fx:id="btanadir" layoutX="42.0" layoutY="390.0" mnemonicParsing="false" onAction="#irAAnadir" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: green;" text="Añadir" textFill="WHITE" />
+      <Button fx:id="btmodificar" layoutX="195.0" layoutY="390.0" mnemonicParsing="false" onAction="#modificarDesdeInfo" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: yellow;" text="Modificar" />
+      <Button fx:id="bteliminar" layoutX="350.0" layoutY="390.0" mnemonicParsing="false" onAction="#eliminarDesdeInfo" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: red;" text="Eliminar" textFill="WHITE" />
+       <Button fx:id="btregresar" layoutX="505.0" layoutY="390.0" mnemonicParsing="false" onAction="#regresarALista" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #111111;" text="Regresar" textFill="WHITE" />
    </children>
 </Pane>

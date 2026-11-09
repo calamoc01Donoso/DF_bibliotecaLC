@@ -10,48 +10,79 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.BibliotecaControlador">
    <children>
-      <TextField alignment="CENTER" layoutX="37.0" layoutY="19.0" prefHeight="30.0" prefWidth="459.0" />
-      <Button alignment="CENTER" layoutX="518.0" layoutY="19.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" text="🔍" />
-      <Pane layoutX="-8.0" layoutY="354.0" prefHeight="46.0" prefWidth="610.0" style="-fx-background-color: #000000;">
-         <children>
-            <Label layoutX="110.0" layoutY="13.0" text="COPYRIGHT: Celia Álamo Calle y Leonarda Ivette Martínez García" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Label>
-         </children>
-      </Pane>
-      <TableView fx:id="listatab" layoutX="37.0" layoutY="74.0" prefHeight="200.0" prefWidth="352.0">
-        <columns>
-          <TableColumn prefWidth="75.0" text="ID" />
-          <TableColumn prefWidth="75.0" text="Titulo" />
-            <TableColumn prefWidth="110.39996337890625" text="Descripcion" />
-            <TableColumn prefWidth="91.20001220703125" text="Autor" />
-        </columns>
-      </TableView>
-      <ImageView fitHeight="200.0" fitWidth="146.0" layoutX="407.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../Imágenes/Saved%20Pictures/hokage_naruto_uzumaki_hd_naruto-1920x1080.jpg" />
-         </image>
-      </ImageView>
-      <Button fx:id="añadir" alignment="CENTER" layoutX="43.0" layoutY="303.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #AEEA00;" text="Añadir" textAlignment="CENTER">
+      <TextField fx:id="buscarId" alignment="CENTER" layoutX="37.0" layoutY="19.0" prefHeight="30.0" prefWidth="459.0" />
+      <Button alignment="CENTER" layoutX="518.0" layoutY="19.0" mnemonicParsing="false" onAction="#buscarLibro" prefHeight="30.0" prefWidth="30.0" text="🔍" />
+       <Pane layoutX="0.0"
+             layoutY="404.0"
+             prefHeight="46.0"
+             prefWidth="640.0"
+             style="-fx-background-color: #000000;">
+
+           <children>
+               <Label alignment="CENTER"
+                      layoutX="0.0"
+                      layoutY="0.0"
+                      prefHeight="46.0"
+                      prefWidth="640.0"
+                      text="COPYRIGHT: Celia Álamo Calle y Leonarda Ivette Martínez García"
+                      textAlignment="CENTER"
+                      textFill="WHITE">
+                   <font>
+                       <Font size="15.0" />
+                   </font>
+               </Label>
+           </children>
+
+       </Pane>
+
+       <TableView fx:id="listatab" layoutX="37.0" layoutY="74.0"
+                  prefHeight="200.0" prefWidth="352.0">
+           <columns>
+
+               <TableColumn fx:id="colId"
+                            prefWidth="75.0"
+                            text="ID" />
+
+               <TableColumn fx:id="colTitulo"
+                            prefWidth="75.0"
+                            text="Titulo" />
+
+               <TableColumn fx:id="colDescripcion"
+                            prefWidth="110.39996337890625"
+                            text="Descripcion" />
+
+               <TableColumn fx:id="colAutor"
+                            prefWidth="91.20001220703125"
+                            text="Autor" />
+
+           </columns>
+       </TableView>
+       <ImageView fx:id="portadaLista"
+                  fitHeight="200.0"
+                  fitWidth="146.0"
+                  layoutX="442.0"
+                  layoutY="74.0"
+                  pickOnBounds="true"
+                  preserveRatio="true" />
+
+       <Button fx:id="añadir" onAction="#irAAnadir" alignment="CENTER" layoutX="43.0" layoutY="330.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #AEEA00;" text="Añadir" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="modificar" alignment="CENTER" layoutX="179.0" layoutY="303.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #E5D605;" text="Modificar" textAlignment="CENTER">
+      <Button fx:id="modificar" alignment="CENTER" layoutX="179.0" layoutY="330.0" mnemonicParsing="false" onAction="#irAModificar" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #E5D605;" text="Modificar" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="eliminar" alignment="CENTER" layoutX="331.0" layoutY="303.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #F34C4C;" text="Eliminar" textAlignment="CENTER" textFill="#fffbfb">
+      <Button fx:id="eliminar" alignment="CENTER" layoutX="331.0" layoutY="330.0" mnemonicParsing="false" onAction="#irAEliminar" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #F34C4C;" text="Eliminar" textAlignment="CENTER" textFill="#fffbfb">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="regresar" alignment="CENTER" layoutX="478.0" layoutY="303.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #111111;" text="Regresar" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="regresar" alignment="CENTER" layoutX="478.0" layoutY="330.0" mnemonicParsing="false" onAction="#regresarAInicio" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #111111;" text="Regresar" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>

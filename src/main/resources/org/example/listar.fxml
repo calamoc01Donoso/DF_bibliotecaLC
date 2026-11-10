@@ -12,8 +12,31 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.BibliotecaControlador">
    <children>
-      <TextField fx:id="buscarId" alignment="CENTER" layoutX="37.0" layoutY="19.0" prefHeight="30.0" prefWidth="459.0" />
-      <Button alignment="CENTER" layoutX="518.0" layoutY="19.0" mnemonicParsing="false" onAction="#buscarLibro" prefHeight="30.0" prefWidth="30.0" text="🔍" />
+       <Label layoutX="220.0"
+              layoutY="20.0"
+              prefWidth="200.0"
+              text="LISTA DE LIBROS"
+              textAlignment="CENTER"
+              textFill="#34452F">
+           <font>
+               <Font name="System Bold" size="24.0" />
+           </font>
+       </Label>
+      <TextField fx:id="buscarId" alignment="CENTER" layoutX="100.0" layoutY="65.0" prefHeight="30.0" prefWidth="400.0" promptText="Buscar libro..." />
+      <Button alignment="CENTER" layoutX="500.0" layoutY="65.0" mnemonicParsing="false" onAction="#buscarLibro" prefHeight="30.0" prefWidth="35.0" text="🔍" />
+
+       <!-- Tarjeta que agrupa la tabla y la portada -->
+       <Pane layoutX="25.0"
+             layoutY="105.0"
+             prefHeight="220.0"
+             prefWidth="590.0"
+             style="-fx-background-color: #F3F1E8;
+             -fx-background-radius: 15;
+             -fx-border-color: #A8AD8E;
+             -fx-border-radius: 15;
+             -fx-border-width: 1;" />
+       <!-- Fin Tarjeta -->
+
        <Pane layoutX="0.0"
              layoutY="404.0"
              prefHeight="46.0"
@@ -37,7 +60,7 @@
 
        </Pane>
 
-       <TableView fx:id="listatab" layoutX="37.0" layoutY="74.0"
+       <TableView fx:id="listatab" layoutX="37.0" layoutY="115.0"
                   prefHeight="200.0" prefWidth="352.0">
            <columns>
 
@@ -63,26 +86,26 @@
                   fitHeight="200.0"
                   fitWidth="146.0"
                   layoutX="442.0"
-                  layoutY="74.0"
+                  layoutY="115.0"
                   pickOnBounds="true"
                   preserveRatio="true" />
 
-       <Button fx:id="añadir" onAction="#irAAnadir" alignment="CENTER" layoutX="43.0" layoutY="330.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #AEEA00;" text="Añadir" textAlignment="CENTER">
+       <Button fx:id="añadir" onAction="#irAAnadir" alignment="CENTER" layoutX="43.0" layoutY="345.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #66734E; -fx-background-radius: 8;" textFill="WHITE" text="Añadir" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="modificar" alignment="CENTER" layoutX="179.0" layoutY="330.0" mnemonicParsing="false" onAction="#irAModificar" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #E5D605;" text="Modificar" textAlignment="CENTER">
+      <Button fx:id="modificar" alignment="CENTER" layoutX="179.0" layoutY="345.0" mnemonicParsing="false" onAction="#irAModificar" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #C6A85B; -fx-background-radius: 8;" textFill="WHITE" text="Modificar" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="eliminar" alignment="CENTER" layoutX="331.0" layoutY="330.0" mnemonicParsing="false" onAction="#irAEliminar" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #F34C4C;" text="Eliminar" textAlignment="CENTER" textFill="#fffbfb">
+      <Button fx:id="eliminar" alignment="CENTER" layoutX="331.0" layoutY="345.0" mnemonicParsing="false" onAction="#irAEliminar" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #B95C5C; -fx-background-radius: 8;" textFill="WHITE" text="Eliminar" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="regresar" alignment="CENTER" layoutX="478.0" layoutY="330.0" mnemonicParsing="false" onAction="#regresarAInicio" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #111111;" text="Regresar" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="regresar" alignment="CENTER" layoutX="478.0" layoutY="345.0" mnemonicParsing="false" onAction="#regresarAInicio" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #2B2B2B; -fx-background-radius: 8;" textFill="WHITE" text="Regresar" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font>

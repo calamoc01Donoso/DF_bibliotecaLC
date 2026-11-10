@@ -53,7 +53,7 @@ public class BibliotecaControlador {
     private TextField fsalida;
 
     @FXML
-    private TextField descripcion;
+    private TextArea descripcion;
 
     // Campo de búsqueda de inicio en pantallaInicio.fxml
     @FXML
@@ -66,6 +66,10 @@ public class BibliotecaControlador {
     // Campo de búsqueda de modificar en modificar.fxml
     @FXML
     private TextField buscarIdModificar;
+
+    // Campo de búsqueda de eliminar en eliminar.fxml
+    @FXML
+    private TextField buscarIdEliminar;
 
     // Campo de búsqueda de infoLibro.fxml
     @FXML
@@ -463,38 +467,156 @@ public class BibliotecaControlador {
     }
 
     /**
-     * Busca un libro por su ID para poder modificarlo
+     * Busca libros desde modificar.fxml por ID, título,
+     * género, ISBN o autor.
      */
     @FXML
     private void buscarLibroModificar() {
 
-        // Obtiene el ID escrito en modificar.fxml
-        int id = Integer.parseInt(buscarIdModificar.getText());
+        // Obtiene el texto escrito en el buscador
+        String texto = buscarIdModificar.getText().trim();
 
-        // Busca el libro en el modelo
-        Libros libroEncontrado = modelo.buscarLibroPorId(id);
+        // Comprueba que el usuario haya escrito algo
+        if (texto.isEmpty()) {
 
-        if (libroEncontrado != null) {
-
-            // Guarda el libro encontrado como libro seleccionado
-            libroSeleccionado = libroEncontrado;
-
-            // Cambia el mensaje mostrando el título del libro encontrado
-            mensajeModificar.setText(
-                    "¿Quieres modificar el título del libro \"" +
-                            libroEncontrado.getTitulo() + "\"?"
+            Alert alerta = new Alert(Alert.AlertType.WARNING);
+            alerta.setTitle("Búsqueda vacía");
+            alerta.setHeaderText(null);
+            alerta.setContentText(
+                    "Introduce algún dato para buscar un libro."
             );
+            alerta.showAndWait();
 
-            System.out.println("Libro a modificar: " + libroEncontrado);
+            return;
+        }
 
-        } else {
+        // Busca todas las coincidencias
+        java.util.ArrayList<Libros> encontrados =
+                modelo.buscarLibros(texto);
 
-            // Muestra un aviso si el libro no existe
+        // Si no encuentra ningún libro
+        if (encontrados.isEmpty()) {
+
             Alert alerta = new Alert(Alert.AlertType.WARNING);
             alerta.setTitle("Libro no encontrado");
             alerta.setHeaderText(null);
-            alerta.setContentText("No existe ningún libro con el ID: " + id);
+            alerta.setContentText(
+                    "No se ha encontrado ningún libro que coincida con: " + texto
+            );
             alerta.showAndWait();
+
+            // Si encuentra solamente un libro
+        } else if (encontrados.size() == 1) {
+
+            libroSeleccionado = encontrados.get(0);
+
+            mensajeModificar.setText(
+                    "¿Quieres modificar el título del libro \"" +
+                            libroSeleccionado.getTitulo() + "\"?"
+            );
+
+            // Si encuentra varios libros
+        } else {
+
+            ChoiceDialog<Libros> dialogo = new ChoiceDialog<>(
+                    encontrados.get(0),
+                    encontrados
+            );
+
+            dialogo.setTitle("Resultados de búsqueda");
+            dialogo.setHeaderText(
+                    "Se han encontrado varios libros."
+            );
+            dialogo.setContentText("Selecciona un libro:");
+
+            Optional<Libros> resultado = dialogo.showAndWait();
+
+            if (resultado.isPresent()) {
+
+                libroSeleccionado = resultado.get();
+
+                mensajeModificar.setText(
+                        "¿Quieres modificar el título del libro \"" +
+                                libroSeleccionado.getTitulo() + "\"?"
+                );
+            }
+        }
+    }
+
+    /**
+     * Busca libros desde eliminar.fxml por ID, título,
+     * género, ISBN o autor.
+     */
+    @FXML
+    private void buscarLibroEliminar() {
+
+        // Obtiene el texto escrito en el buscador
+        String texto = buscarIdEliminar.getText().trim();
+
+        // Comprueba que el usuario haya escrito algo
+        if (texto.isEmpty()) {
+
+            Alert alerta = new Alert(Alert.AlertType.WARNING);
+            alerta.setTitle("Búsqueda vacía");
+            alerta.setHeaderText(null);
+            alerta.setContentText(
+                    "Introduce algún dato para buscar un libro."
+            );
+            alerta.showAndWait();
+
+            return;
+        }
+
+        // Busca todas las coincidencias
+        java.util.ArrayList<Libros> encontrados =
+                modelo.buscarLibros(texto);
+
+        // Si no hay ninguna coincidencia
+        if (encontrados.isEmpty()) {
+
+            Alert alerta = new Alert(Alert.AlertType.WARNING);
+            alerta.setTitle("Libro no encontrado");
+            alerta.setHeaderText(null);
+            alerta.setContentText(
+                    "No se ha encontrado ningún libro que coincida con: " + texto
+            );
+            alerta.showAndWait();
+
+            // Si solamente hay una coincidencia
+        } else if (encontrados.size() == 1) {
+
+            libroSeleccionado = encontrados.get(0);
+
+            mensajeEliminar.setText(
+                    "¿Quieres eliminar el libro \"" +
+                            libroSeleccionado.getTitulo() + "\"?"
+            );
+
+            // Si existen varias coincidencias
+        } else {
+
+            ChoiceDialog<Libros> dialogo = new ChoiceDialog<>(
+                    encontrados.get(0),
+                    encontrados
+            );
+
+            dialogo.setTitle("Resultados de búsqueda");
+            dialogo.setHeaderText(
+                    "Se han encontrado varios libros."
+            );
+            dialogo.setContentText("Selecciona un libro:");
+
+            Optional<Libros> resultado = dialogo.showAndWait();
+
+            if (resultado.isPresent()) {
+
+                libroSeleccionado = resultado.get();
+
+                mensajeEliminar.setText(
+                        "¿Quieres eliminar el libro \"" +
+                                libroSeleccionado.getTitulo() + "\"?"
+                );
+            }
         }
     }
 
@@ -502,7 +624,7 @@ public class BibliotecaControlador {
      * Solicita un nuevo título y modifica el libro seleccionado.
      */
     @FXML
-    private void confirmarModificacion() {
+    private void confirmarModificacion() throws IOException {
 
         // Comprueba que existe un libro seleccionado
         if (libroSeleccionado == null) {
@@ -555,11 +677,9 @@ public class BibliotecaControlador {
                     );
                     alerta.showAndWait();
 
-                    // Actualiza el mensaje de la pantalla
-                    mensajeModificar.setText(
-                            "¿Quieres modificar el título del libro \"" +
-                                    libroSeleccionado.getTitulo() + "\"?"
-                    );
+                    // Regresa a la lista después de modificar correctamente
+                    libroSeleccionado = null;
+                    App.setRoot("listar");
 
                 } else {
 
@@ -751,8 +871,7 @@ public class BibliotecaControlador {
                 fsalida.getText(),
                 descripcion.getText(),
                 rutaPortada,
-                nuevoAutor,
-                0.0
+                nuevoAutor
         );
 
         //Añadir el libro al modelo
@@ -764,6 +883,20 @@ public class BibliotecaControlador {
         alerta.setHeaderText(null);
         alerta.setContentText("El libro \"" + nuevoLibro.getTitulo() + "\" se ha añadido correctamente.");
         alerta.showAndWait();
+
+        // Limpia el formulario para poder añadir otro libro
+        autor.clear();
+        titulo.clear();
+        genero.clear();
+        isbn.clear();
+        fsalida.clear();
+        descripcion.clear();
+
+        // Limpia la portada seleccionada
+        rutaPortada = "";
+
+        // Devuelve el cursor al campo Autor
+        autor.requestFocus();
 
         //Comprobaciones
         System.out.println("Libro agregado" + nuevoLibro);

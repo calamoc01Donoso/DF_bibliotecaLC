@@ -5,9 +5,9 @@ import java.util.ArrayList;
 public class BibliotecaModelo {
 
     ArrayList <Libros> libro = new ArrayList<>();
-
     ArrayList<Autor> autores = new ArrayList<>();
 
+    //contructor
     public BibliotecaModelo(){
 
         this.libro = new ArrayList<>();

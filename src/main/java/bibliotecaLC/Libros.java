@@ -17,7 +17,6 @@ public class Libros {
     String descrip;
     String portada;
     Autor autor;
-    double precio;
 
     /**
      * Constructor vacío de la clase Libros.
@@ -35,10 +34,9 @@ public class Libros {
      * @param descrip es la descripción del libro
      * @param portada es la ruta de la imagen de portada del libro
      * @param autor es el autor del libro
-     * @param precio  devuelve el valor de precio
      * @param titulo devuelve el valor de titulo de libro
      **/
-    public Libros(int id, String titulo, String genero, String isbn, String fechaPublicacion, String descrip, String portada, Autor autor, double precio) {
+    public Libros(int id, String titulo, String genero, String isbn, String fechaPublicacion, String descrip, String portada, Autor autor) {
         this.id = id;
         this.titulo = titulo;
         this.genero = genero;
@@ -47,7 +45,6 @@ public class Libros {
         this.descrip = descrip;
         this.portada = portada;
         this.autor = autor;
-        this.precio = precio;
 
     }
 
@@ -181,22 +178,6 @@ public class Libros {
     }
 
     /**
-     * Obtiene el precio del libro
-     * @return precio del libro
-     */
-    public double getPrecio() {
-        return precio;
-    }
-
-    /**
-     * Modificará el precio del libro
-     * @param precio nuevo precio del libro
-     */
-    public void setPrecio(double precio) {
-        this.precio = precio;
-    }
-
-    /**
      * Este método devuelve la información del libro en formato texto
      * @return representación en texto del libro
      */
@@ -211,7 +192,6 @@ public class Libros {
                 ", descrip='" + descrip + '\'' +
                 ", portada='" + portada + '\'' +
                 ", autor=" + autor +
-                ", precio=" + precio +
                 '}';
     }
 }

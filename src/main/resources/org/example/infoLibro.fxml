@@ -35,9 +35,9 @@
        <TextArea fx:id="descripInfo" editable="false" focusTraversable="false" layoutX="42.0" layoutY="242.0" prefHeight="120.0" prefWidth="320.0" wrapText="true" />
 
        <!-- Botones -->
-       <Button fx:id="btanadir" layoutX="42.0" layoutY="390.0" mnemonicParsing="false" onAction="#irAAnadir" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: green;" text="Añadir" textFill="WHITE" />
-      <Button fx:id="btmodificar" layoutX="195.0" layoutY="390.0" mnemonicParsing="false" onAction="#modificarDesdeInfo" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: yellow;" text="Modificar" />
-      <Button fx:id="bteliminar" layoutX="350.0" layoutY="390.0" mnemonicParsing="false" onAction="#eliminarDesdeInfo" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: red;" text="Eliminar" textFill="WHITE" />
-       <Button fx:id="btregresar" layoutX="505.0" layoutY="390.0" mnemonicParsing="false" onAction="#regresarALista" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #111111;" text="Regresar" textFill="WHITE" />
+       <Button fx:id="btanadir" layoutX="42.0" layoutY="390.0" mnemonicParsing="false" onAction="#irAAnadir" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #66734E; -fx-background-radius: 8;" text="Añadir" textFill="WHITE" />
+      <Button fx:id="btmodificar" layoutX="195.0" layoutY="390.0" mnemonicParsing="false" onAction="#modificarDesdeInfo" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #C6A85B; -fx-background-radius: 8;" text="Modificar" />
+      <Button fx:id="bteliminar" layoutX="350.0" layoutY="390.0" mnemonicParsing="false" onAction="#eliminarDesdeInfo" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #B95C5C; -fx-background-radius: 8;" text="Eliminar" textFill="WHITE" />
+       <Button fx:id="btregresar" layoutX="505.0" layoutY="390.0" mnemonicParsing="false" onAction="#regresarALista" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #2B2B2B; -fx-background-radius: 8;" text="Regresar" textFill="WHITE" />
    </children>
 </Pane>

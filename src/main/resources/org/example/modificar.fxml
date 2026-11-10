@@ -8,8 +8,18 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.BibliotecaControlador">
    <children>
-      <TextField fx:id="buscarIdModificar" alignment="CENTER" layoutX="37.0" layoutY="19.0" prefHeight="30.0" prefWidth="459.0" />
-      <Button fx:id="buscar" alignment="CENTER" layoutX="518.0" layoutY="19.0" mnemonicParsing="false" onAction="#buscarLibroModificar" prefHeight="30.0" prefWidth="30.0" text="🔍" />
+       <Label layoutX="220.0"
+              layoutY="30.0"
+              prefWidth="200.0"
+              text="MODIFICAR LIBRO"
+              textAlignment="CENTER">
+           <font>
+               <Font name="System Bold" size="22.0" />
+           </font>
+       </Label>
+
+      <TextField fx:id="buscarIdModificar" alignment="CENTER" layoutX="70.0" layoutY="80.0" prefHeight="30.0" prefWidth="430.0" />
+      <Button fx:id="buscar" alignment="CENTER" layoutX="515.0" layoutY="80.0" mnemonicParsing="false" onAction="#buscarLibroModificar" prefHeight="30.0" prefWidth="35.0" text="🔍" />
        <Pane layoutX="0.0"
              layoutY="404.0"
              prefHeight="46.0"
@@ -32,7 +42,7 @@
            </children>
 
        </Pane>
-      <Pane layoutX="38.0" layoutY="92.0" prefHeight="158.0" prefWidth="517.0" style="-fx-background-color: #9C9797; -fx-background-radius: 10;">
+      <Pane layoutX="70.0" layoutY="135.0" prefHeight="170.0" prefWidth="480.0" style="-fx-background-color: #9C9797; -fx-background-radius: 10;">
          <children>
             <Label fx:id="mensajeModificar" layoutX="38.0" layoutY="30.0" prefHeight="30.0" prefWidth="427.0" text="¿Quieres modificar  el titulo del  libro &quot;Titulo1&quot;?" textAlignment="CENTER" textFill="WHITE">
                <font>
@@ -51,27 +61,5 @@
             </Button>
          </children>
       </Pane>
-      <Button fx:id="añadir" alignment="CENTER" layoutX="90.0" layoutY="297.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #AEEA00;" text="Añadir" textAlignment="CENTER">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
-       <!--
-      <Button fx:id="modificar" alignment="CENTER" layoutX="171.0" layoutY="297.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #E5D605;" text="Modificar" textAlignment="CENTER">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
-      -->
-      <Button fx:id="eliminar" alignment="CENTER" layoutX="260.0" layoutY="297.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #F34C4C;" text="Eliminar" textAlignment="CENTER" textFill="#fffbfb">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="regresar" alignment="CENTER" layoutX="430.0" layoutY="297.0" mnemonicParsing="false" onAction="#regresarALista" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #111111;" text="Regresar" textAlignment="CENTER" textFill="WHITE">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
    </children>
 </Pane>

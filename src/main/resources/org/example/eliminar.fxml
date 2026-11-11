@@ -8,46 +8,18 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.BibliotecaControlador">
    <children>
-       <Label layoutX="220.0"
-              layoutY="30.0"
-              prefWidth="200.0"
-              text="ELIMINAR LIBRO"
-              textAlignment="CENTER">
+       <Label layoutX="220.0" layoutY="30.0" prefWidth="200.0" text="ELIMINAR LIBRO" textAlignment="CENTER">
            <font>
                <Font name="System Bold" size="22.0" />
            </font>
        </Label>
-       <TextField fx:id="buscarIdEliminar"
-                  alignment="CENTER"
-                  layoutX="70.0"
-                  layoutY="80.0"
-                  prefHeight="30.0"
-                  prefWidth="430.0" />
+       <TextField fx:id="buscarIdEliminar" alignment="CENTER" layoutX="70.0" layoutY="80.0" prefHeight="30.0" prefWidth="430.0" />
 
-       <Button fx:id="buscar"
-               alignment="CENTER"
-               layoutX="515.0"
-               layoutY="80.0"
-               mnemonicParsing="false"
-               onAction="#buscarLibroEliminar"
-               prefHeight="30.0"
-               prefWidth="35.0"
-               text="🔍" />
-      <Pane layoutX="0.0"
-             layoutY="404.0"
-             prefHeight="46.0"
-             prefWidth="640.0"
-             style="-fx-background-color: #000000;">
+       <Button fx:id="buscar" alignment="CENTER" layoutX="515.0" layoutY="80.0" mnemonicParsing="false" onAction="#buscarLibroEliminar" prefHeight="30.0" prefWidth="35.0" text="🔍" />
+      <Pane layoutX="0.0" layoutY="404.0" prefHeight="46.0" prefWidth="640.0" style="-fx-background-color: #000000;">
 
            <children>
-               <Label alignment="CENTER"
-                      layoutX="0.0"
-                      layoutY="0.0"
-                      prefHeight="46.0"
-                      prefWidth="640.0"
-                      text="COPYRIGHT: Celia Álamo Calle y Leonarda Ivette Martínez García"
-                      textAlignment="CENTER"
-                      textFill="WHITE">
+               <Label alignment="CENTER" layoutX="0.0" layoutY="0.0" prefHeight="46.0" prefWidth="640.0" text="COPYRIGHT: Celia Álamo Calle y Leonarda Ivette Martínez García" textAlignment="CENTER" textFill="WHITE">
                    <font>
                        <Font size="15.0" />
                    </font>
@@ -67,7 +39,7 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button fx:id="no" alignment="CENTER" layoutX="352.0" layoutY="108.0" mnemonicParsing="false" onAction="#cancelarEliminacion" prefHeight="30.0" prefWidth="126.0" style="-fx-background-color: #F34C4C;" text="No" textAlignment="CENTER" textFill="#fffbfb">
+            <Button fx:id="no" alignment="CENTER" layoutX="311.0" layoutY="108.0" mnemonicParsing="false" onAction="#cancelarEliminacion" prefHeight="30.0" prefWidth="126.0" style="-fx-background-color: #F34C4C;" text="No" textAlignment="CENTER" textFill="#fffbfb">
                <font>
                   <Font size="14.0" />
                </font>

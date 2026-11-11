@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import javafx.scene.image.Image;
 import java.io.IOException;
 
 /**
@@ -20,6 +21,9 @@ public class App extends Application {
         scene = new Scene(loadFXML("pantallaInicio"), 640, 450);
         stage.setScene(scene);
         stage.setResizable(false);
+        stage.setTitle("BibliotecaLC");
+        stage.getIcons().add(
+                new Image(getClass().getResourceAsStream("/org/example/imagenes/icono.png")));
         stage.show();
     }
 
